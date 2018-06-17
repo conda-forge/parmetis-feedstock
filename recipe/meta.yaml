@@ -30,10 +30,6 @@ test:
     - test -f "${PREFIX}/include/parmetis.h"
     - test -f "${PREFIX}/lib/libparmetis.dylib"  # [osx]
     - test -f "${PREFIX}/lib/libparmetis.so"     # [linux]
-    - parmetis
-    - pometis
-    - mtest
-    - ptest
 
 about:
   home: http://glaros.dtc.umn.edu/gkhome/metis/parmetis/overview
