@@ -1,2 +1,4 @@
+c_compiler:
+- toolchain_c
 mpi:
 - mpich
