@@ -1,11 +1,11 @@
 version: 2
 
 jobs:
-  build_linux_c_compilergccmpimpich:
+  build_linux_c_compilergcccxx_compilergxxmpimpich:
     working_directory: ~/test
     machine: true
     environment:
-      - CONFIG: "linux_c_compilergccmpimpich"
+      - CONFIG: "linux_c_compilergcccxx_compilergxxmpimpich"
     steps:
       - checkout
       - run:
@@ -18,11 +18,11 @@ jobs:
       - run:
           # Run, test and (if we have a BINSTAR_TOKEN) upload the distributions.
           command: ./.circleci/run_docker_build.sh
-  build_linux_c_compilergccmpiopenmpi:
+  build_linux_c_compilergcccxx_compilergxxmpiopenmpi:
     working_directory: ~/test
     machine: true
     environment:
-      - CONFIG: "linux_c_compilergccmpiopenmpi"
+      - CONFIG: "linux_c_compilergcccxx_compilergxxmpiopenmpi"
     steps:
       - checkout
       - run:
@@ -35,11 +35,11 @@ jobs:
       - run:
           # Run, test and (if we have a BINSTAR_TOKEN) upload the distributions.
           command: ./.circleci/run_docker_build.sh
-  build_linux_c_compilertoolchain_cmpimpich:
+  build_linux_c_compilertoolchain_ccxx_compilertoolchain_cxxmpimpich:
     working_directory: ~/test
     machine: true
     environment:
-      - CONFIG: "linux_c_compilertoolchain_cmpimpich"
+      - CONFIG: "linux_c_compilertoolchain_ccxx_compilertoolchain_cxxmpimpich"
     steps:
       - checkout
       - run:
@@ -52,11 +52,11 @@ jobs:
       - run:
           # Run, test and (if we have a BINSTAR_TOKEN) upload the distributions.
           command: ./.circleci/run_docker_build.sh
-  build_linux_c_compilertoolchain_cmpiopenmpi:
+  build_linux_c_compilertoolchain_ccxx_compilertoolchain_cxxmpiopenmpi:
     working_directory: ~/test
     machine: true
     environment:
-      - CONFIG: "linux_c_compilertoolchain_cmpiopenmpi"
+      - CONFIG: "linux_c_compilertoolchain_ccxx_compilertoolchain_cxxmpiopenmpi"
     steps:
       - checkout
       - run:
@@ -74,7 +74,7 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - build_linux_c_compilergccmpimpich
-      - build_linux_c_compilergccmpiopenmpi
-      - build_linux_c_compilertoolchain_cmpimpich
-      - build_linux_c_compilertoolchain_cmpiopenmpi
+      - build_linux_c_compilergcccxx_compilergxxmpimpich
+      - build_linux_c_compilergcccxx_compilergxxmpiopenmpi
+      - build_linux_c_compilertoolchain_ccxx_compilertoolchain_cxxmpimpich
+      - build_linux_c_compilertoolchain_ccxx_compilertoolchain_cxxmpiopenmpi
