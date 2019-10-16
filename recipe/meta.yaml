@@ -31,7 +31,7 @@ test:
     - conda inspect linkages parmetis  # [not win]
     - test -f "${PREFIX}/include/parmetis.h"
     - test -f "${PREFIX}/lib/libparmetis.dylib"  # [osx]
-    - test -f "${PREFIX}/lib/libparmetis.so"     # [linux]
+    - test -f "${PREFIX}/lib/libparmetis.so"  # [linux]
 
 about:
   home: http://glaros.dtc.umn.edu/gkhome/metis/parmetis/overview
