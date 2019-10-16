@@ -2,6 +2,8 @@
 {% set version = "4.0.3" %}
 {% set sha256 = "f2d9a231b7cf97f1fee6e8c9663113ebf6c240d407d3c118c55b3633d6be6e5f" %}
 
+{% set mpi = mpi or 'mpich' %}
+
 package:
   name: parmetis
   version: {{ version }}
