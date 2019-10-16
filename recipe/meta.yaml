@@ -1,6 +1,8 @@
-{% set build = 1003 %}
+{% set build = 1004 %}
 {% set version = "4.0.3" %}
 {% set sha256 = "f2d9a231b7cf97f1fee6e8c9663113ebf6c240d407d3c118c55b3633d6be6e5f" %}
+
+{% set mpi = mpi or 'mpich' %}
 
 package:
   name: parmetis
@@ -31,7 +33,7 @@ test:
     - conda inspect linkages parmetis  # [not win]
     - test -f "${PREFIX}/include/parmetis.h"
     - test -f "${PREFIX}/lib/libparmetis.dylib"  # [osx]
-    - test -f "${PREFIX}/lib/libparmetis.so"     # [linux]
+    - test -f "${PREFIX}/lib/libparmetis.so"  # [linux]
 
 about:
   home: http://glaros.dtc.umn.edu/gkhome/metis/parmetis/overview
@@ -56,3 +58,4 @@ extra:
     - dalcinl
     - isuruf
     - minrk
+    - davidbrochart
