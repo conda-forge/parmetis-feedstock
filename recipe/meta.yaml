@@ -23,6 +23,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - make
+    - {{ mpi }}   # [mpi == "openmpi" and build_platform != target_platform]
   host:
     - {{ mpi }}
   run:
