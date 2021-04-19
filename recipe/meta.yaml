@@ -23,6 +23,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - make
+    - {{ mpi }}   # [mpi == "openmpi" and build_platform != target_platform]
   host:
     - {{ mpi }}
   run:
@@ -30,8 +31,6 @@ requirements:
 
 test:
   commands:
-    - conda inspect objects  parmetis  # [osx]
-    - conda inspect linkages parmetis  # [not win]
     - test -f "${PREFIX}/include/parmetis.h"
     - test -f "${PREFIX}/lib/libparmetis.dylib"  # [osx]
     - test -f "${PREFIX}/lib/libparmetis.so"  # [linux]
