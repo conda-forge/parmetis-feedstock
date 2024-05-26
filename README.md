@@ -5,9 +5,11 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/parmetis-feedst
 
 Home: http://glaros.dtc.umn.edu/gkhome/metis/parmetis/overview
 
-Package license: Non-free for commercial use
+Package license: [LicenseRef-ParMETIS](https://github.com/KarypisLab/ParMETIS/blob/main/LICENSE)
 
 Summary: ParMETIS - Parallel Graph Partitioning and Fill-reducing Matrix Ordering
+
+Development: https://github.com/KarypisLab/ParMETIS
 
 Documentation: http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/manual.pdf
 
