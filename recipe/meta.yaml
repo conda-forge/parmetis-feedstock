@@ -1,4 +1,4 @@
-{% set build = 1006 %}
+{% set build = 1007 %}
 {% set version = "4.0.3" %}
 {% set sha256 = "f2d9a231b7cf97f1fee6e8c9663113ebf6c240d407d3c118c55b3633d6be6e5f" %}
 
@@ -9,13 +9,14 @@ package:
   version: {{ version }}
 
 source:
-  fn: parmetis-{{ version }}.tar.gz
-  url: http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/parmetis-{{ version }}.tar.gz
+  url: https://karypis.github.io/glaros/files/sw/parmetis/parmetis-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   skip: true  # [win]
   number: {{ build }}
+  run_exports:
+    - {{ pin_subpackage("parmetis", max_pin="x.x") }}
 
 requirements:
   build:
