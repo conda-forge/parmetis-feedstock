@@ -3,15 +3,15 @@ About parmetis-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/parmetis-feedstock/blob/main/LICENSE.txt)
 
-Home: http://glaros.dtc.umn.edu/gkhome/metis/parmetis/overview
+Home: https://karypis.github.io/glaros/software/metis/overview.html
 
-Package license: [LicenseRef-ParMETIS](https://github.com/KarypisLab/ParMETIS/blob/main/LICENSE)
+Package license: LicenseRef-ParMETIS
 
 Summary: ParMETIS - Parallel Graph Partitioning and Fill-reducing Matrix Ordering
 
 Development: https://github.com/KarypisLab/ParMETIS
 
-Documentation: http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/manual.pdf
+Documentation: https://karypis.github.io/glaros/files/sw/parmetis/manual.pdf
 
 ParMETIS is an MPI-based parallel library that implements a
 variety of algorithms for partitioning unstructured graphs,
@@ -22,7 +22,6 @@ computations and large scale numerical simulations. The algorithms
 implemented in ParMETIS are based on the parallel multilevel k-way
 graph-partitioning, adaptive repartitioning, and parallel
 multi-constrained partitioning schemes developed in our lab.
-
 
 Current build status
 ====================
