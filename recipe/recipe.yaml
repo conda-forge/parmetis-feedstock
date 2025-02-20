@@ -39,7 +39,7 @@ requirements:
 
 tests:
   - script:
-      - test -f "${PREFIX}/include/parmetis.h
+      - test -f "${PREFIX}/include/parmetis.h"
       - if: osx
         then: test -f "${PREFIX}/lib/libparmetis.dylib
       - if: linux
