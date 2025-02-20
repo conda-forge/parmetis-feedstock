@@ -38,12 +38,11 @@ requirements:
     - ${{ pin_subpackage("parmetis", upper_bound="x.x") }}
 
 tests:
-  - script:
-      - test -f "${PREFIX}/include/parmetis.h"
-      - if: osx
-        then: test -f "${PREFIX}/lib/libparmetis.dylib
-      - if: linux
-        then: test -f ${PREFIX}/lib/libparmetis.so
+  - package_contents:
+      include:
+        - parmetis.h
+      lib:
+        - parmetis
 
 about:
   license: LicenseRef-ParMETIS
