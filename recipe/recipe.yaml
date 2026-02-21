@@ -23,7 +23,7 @@ build:
 
 requirements:
   build:
-    - cmake <4
+    - cmake
     - ${{ compiler("c") }}
     - ${{ stdlib("c") }}
     - ${{ compiler("cxx") }}
