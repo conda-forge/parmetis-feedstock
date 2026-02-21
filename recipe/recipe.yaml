@@ -1,0 +1,71 @@
+schema_version: 1
+
+context:
+  build: 1008
+  version: 4.0.3
+  sha256: f2d9a231b7cf97f1fee6e8c9663113ebf6c240d407d3c118c55b3633d6be6e5f
+  mpi: ${{ mpi | default("mpich") }}
+
+package:
+  name: parmetis
+  version: ${{ version }}
+
+source:
+  url: https://karypis.github.io/glaros/files/sw/parmetis/parmetis-${{ version }}.tar.gz
+  sha256: ${{ sha256 }}
+  patches:
+    - pkg-parmetis-82409d68aa1d6cbc70740d0f35024aae17f7d5cb.patch
+    - pkg-parmetis-1c1a9fd0f408dc4d42c57f5c3ee6ace411eb222b.patch
+
+build:
+  number: ${{ build }}
+  skip: win
+
+requirements:
+  build:
+    - cmake
+    - ${{ compiler("c") }}
+    - ${{ stdlib("c") }}
+    - ${{ compiler("cxx") }}
+    - make
+    - if: mpi == "openmpi" and build_platform != target_platform
+      then: ${{ mpi }}
+  host:
+    - ${{ mpi }}
+  run:
+    - ${{ mpi }}
+  run_exports:
+    - ${{ pin_subpackage("parmetis", upper_bound="x.x") }}
+
+tests:
+  - package_contents:
+      include:
+        - parmetis.h
+      lib:
+        - parmetis
+
+about:
+  license: LicenseRef-ParMETIS
+  license_file: LICENSE.txt
+  summary: ParMETIS - Parallel Graph Partitioning and Fill-reducing Matrix Ordering
+  description: |
+    ParMETIS is an MPI-based parallel library that implements a
+    variety of algorithms for partitioning unstructured graphs,
+    meshes, and for computing fill-reducing orderings of sparse
+    matrices. ParMETIS extends the functionality provided by METIS and
+    includes routines that are especially suited for parallel AMR
+    computations and large scale numerical simulations. The algorithms
+    implemented in ParMETIS are based on the parallel multilevel k-way
+    graph-partitioning, adaptive repartitioning, and parallel
+    multi-constrained partitioning schemes developed in our lab.
+  homepage: https://karypis.github.io/glaros/software/metis/overview.html
+  repository: https://github.com/KarypisLab/ParMETIS
+  documentation: https://karypis.github.io/glaros/files/sw/parmetis/manual.pdf
+
+extra:
+  recipe-maintainers:
+    - basnijholt
+    - dalcinl
+    - isuruf
+    - minrk
+    - davidbrochart

@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # for cross compiling with openmpi
-export OPAL_PREFIX=$PREFIX
 export CC=mpicc
 export CXX=mpicxx
 
@@ -12,6 +11,7 @@ cmake ${CMAKE_ARGS} \
   -DMETIS_PATH=$SRC_DIR/metis \
   -DSHARED=1 \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
+  -DCMAKE_POLICY_VERSION_MINIMUM=3.10 \
   ..
 
 make -j${CPU_COUNT}
